@@ -6,12 +6,16 @@ import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Button.ButtonStyle;
+import com.badlogic.gdx.scenes.scene2d.ui.CheckBox.CheckBoxStyle;
+import com.badlogic.gdx.scenes.scene2d.ui.ImageTextButton.ImageTextButtonStyle;
 import com.badlogic.gdx.scenes.scene2d.ui.Label.LabelStyle;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.ray3k.libgdxprojectsetup.tables.LandingTable;
-import com.ray3k.libgdxprojectsetup.tables.WizardProgress.ProgressGroupStyle;
+import com.ray3k.libgdxprojectsetup.tables.LibrariesTable;
+import com.ray3k.libgdxprojectsetup.widgets.LibBuilder.LibBuilderStyle;
+import com.ray3k.libgdxprojectsetup.widgets.WizardProgress.ProgressGroupStyle;
 import com.ray3k.libgdxprojectsetup.tables.ProjectTable;
 
 public class Core extends ApplicationAdapter {
@@ -20,6 +24,7 @@ public class Core extends ApplicationAdapter {
 	public static Table root;
 	public static LandingTable landingTable;
 	public static ProjectTable projectTable;
+	public static LibrariesTable librariesTable;
 	
 	@Override
 	public void create() {
@@ -32,6 +37,19 @@ public class Core extends ApplicationAdapter {
 				ButtonStyle.class), skin.get("progress", LabelStyle.class));
 		skin.add("default", progressGroupStyle);
 		
+		LibBuilderStyle libBuilderStyle = new LibBuilderStyle();
+		libBuilderStyle.category = skin.get(LabelStyle.class);
+		libBuilderStyle.tooltipLabel = skin.get(LabelStyle.class);
+		libBuilderStyle.delete = skin.get("delete", ImageTextButtonStyle.class);
+		libBuilderStyle.add = skin.get("add", ButtonStyle.class);
+		libBuilderStyle.listItem = skin.get(CheckBoxStyle.class);
+		libBuilderStyle.check = skin.get("check", ImageTextButtonStyle.class);
+		libBuilderStyle.popBackground = skin.getDrawable("list-library-10");
+		libBuilderStyle.popStageBackground = skin.getDrawable("stage-background");
+		libBuilderStyle.tooltipBackground = skin.getDrawable("list-library-10");
+		libBuilderStyle.popTooltipBackground = skin.getDrawable("list-10");
+		skin.add("default", libBuilderStyle);
+		
 		root = new Table();
 		root.setBackground(skin.getDrawable("bg-10"));
 		root.setFillParent(true);
@@ -39,7 +57,8 @@ public class Core extends ApplicationAdapter {
 		
 		landingTable = new LandingTable();
 		projectTable = new ProjectTable();
-		root.add(projectTable).minSize(600, 530);
+		librariesTable = new LibrariesTable();
+		root.add(librariesTable).minSize(600, 530);
 	}
 
 	@Override

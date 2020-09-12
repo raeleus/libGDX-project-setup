@@ -1,0 +1,28 @@
+{
+  "PLATFORMS": {
+    "Android" : {
+      "description" : "Android mobile platform. Requires Android SDK"
+    },
+    "iOS" : {
+      "description" : "iOS mobile platform. Implemented via RoboVM."
+    },
+    "LWJGL2" : {
+      "description" : "Older desktop platform utilizing the Lightweight Java Game Library. Use LWJGL3 for the latest support."
+    },
+    "Headless" : {
+      "description" : "Headless platform. Has access to the core project. Useful for testing or setting up a server application."
+    },
+    "HTML-GWT" : {
+      "description" : "GWT WebGL platform for distribution on web browsers. Supports only the Java language. Some extensions might not be compatible with GWT."
+    },
+    "LWJGL3" : {
+      "description" : "Desktop platform utilizing the Lightweight Java Game Library featuring the latest support."
+    },
+    "Shared" : {
+      "description" : "Code shared between core and server projects."
+    },
+    "Server" : {
+      "description" : "Optional server project."
+    }
+  }
+}

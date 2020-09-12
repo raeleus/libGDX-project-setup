@@ -1,4 +1,4 @@
-package com.ray3k.libgdxprojectsetup.tables;
+package com.ray3k.libgdxprojectsetup.widgets;
 
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Event;
@@ -17,6 +17,7 @@ import com.badlogic.gdx.utils.Array;
 
 public class WizardProgress extends Table {
     private Label label;
+    private Button targetButton;
     private Array<Button> buttons;
     
     public WizardProgress(int selected, int nodeCount, String labelText, Skin skin) {
@@ -29,8 +30,7 @@ public class WizardProgress extends Table {
     
     public WizardProgress(int selected, int nodeCount, String labelText, ProgressGroupStyle style) {
         setBackground(style.background);
-    
-        Button targetButton = null;
+        
         buttons = new Array<>();
         for (int i = 0; i < nodeCount; i++) {
             Button button = new Button(style.buttonStyle);
@@ -56,9 +56,12 @@ public class WizardProgress extends Table {
                 addActor(label);
             }
         }
-        
-        pack();
-        if (targetButton != null) label.setPosition(targetButton.getX(), targetButton.getY(Align.top), Align.bottom);
+    }
+    
+    @Override
+    public void layout() {
+        super.layout();
+        if (targetButton != null) label.setPosition(targetButton.getX(Align.center), targetButton.getY(Align.top), Align.bottom);
     }
     
     public static class ProgressGroupStyle {

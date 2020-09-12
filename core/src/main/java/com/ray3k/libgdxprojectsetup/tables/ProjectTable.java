@@ -1,10 +1,9 @@
 package com.ray3k.libgdxprojectsetup.tables;
 
-import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
-import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
-import com.ray3k.libgdxprojectsetup.tables.WizardProgress.WizardProgressEvent;
-import com.ray3k.libgdxprojectsetup.tables.WizardProgress.WizardProgressListener;
+import com.ray3k.libgdxprojectsetup.widgets.WizardProgress;
+import com.ray3k.libgdxprojectsetup.widgets.WizardProgress.WizardProgressEvent;
+import com.ray3k.libgdxprojectsetup.widgets.WizardProgress.WizardProgressListener;
 
 import static com.ray3k.libgdxprojectsetup.Core.skin;
 
@@ -56,7 +55,7 @@ public class ProjectTable extends Table  {
         
         table.add().uniform();
         
-        WizardProgress progressStack = new WizardProgress(0, 10, "Project Details", skin);
+        WizardProgress progressStack = new WizardProgress(0, 3, "Project Details", skin);
         table.add(progressStack).expandX();
         progressStack.addListener(new WizardProgressListener() {
             @Override

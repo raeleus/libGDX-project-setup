@@ -83,21 +83,21 @@ button-progress
   index: -1
 button-progress-checked
   rotate: false
-  xy: 321, 338
+  xy: 372, 344
   size: 14, 13
   orig: 14, 13
   offset: 0, 0
   index: -1
 button-progress-over
   rotate: false
-  xy: 343, 355
+  xy: 262, 212
   size: 14, 13
   orig: 14, 13
   offset: 0, 0
   index: -1
 button-progress-pressed
   rotate: false
-  xy: 262, 215
+  xy: 508, 592
   size: 14, 13
   orig: 14, 13
   offset: 0, 0
@@ -118,7 +118,7 @@ checkbox-over
   index: -1
 checkbox-pressed
   rotate: false
-  xy: 321, 353
+  xy: 372, 379
   size: 20, 15
   orig: 20, 15
   offset: 0, 0
@@ -132,7 +132,7 @@ divider-horizontal
   index: -1
 divider-vertical
   rotate: false
-  xy: 1017, 1012
+  xy: 394, 383
   size: 1, 11
   orig: 1, 11
   offset: 0, 0
@@ -146,65 +146,65 @@ handle-advanced-options
   index: -1
 icon-add
   rotate: false
-  xy: 284, 396
-  size: 17, 17
-  orig: 17, 17
+  xy: 262, 265
+  size: 17, 18
+  orig: 17, 18
   offset: 0, 0
   index: -1
 icon-add-over
   rotate: false
-  xy: 372, 377
-  size: 17, 17
-  orig: 17, 17
+  xy: 508, 645
+  size: 17, 18
+  orig: 17, 18
+  offset: 0, 0
+  index: -1
+icon-add-pressed
+  rotate: false
+  xy: 372, 359
+  size: 17, 18
+  orig: 17, 18
   offset: 0, 0
   index: -1
 icon-check
   rotate: false
-  xy: 508, 647
-  size: 16, 16
-  orig: 16, 16
+  xy: 284, 396
+  size: 16, 17
+  orig: 16, 17
   offset: 0, 0
   index: -1
 icon-check-over
   rotate: false
-  xy: 262, 248
-  size: 16, 16
-  orig: 16, 16
+  xy: 262, 246
+  size: 16, 17
+  orig: 16, 17
   offset: 0, 0
   index: -1
 icon-check-pressed
   rotate: false
-  xy: 281, 267
-  size: 16, 16
-  orig: 16, 16
+  xy: 281, 266
+  size: 16, 17
+  orig: 16, 17
   offset: 0, 0
   index: -1
 icon-delete
   rotate: false
-  xy: 508, 629
-  size: 16, 16
-  orig: 16, 16
+  xy: 508, 626
+  size: 16, 17
+  orig: 16, 17
   offset: 0, 0
   index: -1
 icon-delete-over
   rotate: false
-  xy: 262, 230
-  size: 16, 16
-  orig: 16, 16
+  xy: 262, 227
+  size: 16, 17
+  orig: 16, 17
   offset: 0, 0
   index: -1
 icon-delete-pressed
   rotate: false
-  xy: 508, 611
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: -1
-icon-over-pressed
-  rotate: false
-  xy: 262, 266
-  size: 17, 17
-  orig: 17, 17
+  xy: 508, 607
+  size: 16, 17
+  orig: 16, 17
   offset: 0, 0
   index: -1
 icon-wand
@@ -221,6 +221,13 @@ list
   orig: 49, 24
   offset: 0, 0
   index: -1
+list-library
+  rotate: false
+  xy: 321, 344
+  size: 49, 24
+  orig: 49, 24
+  offset: 0, 0
+  index: -1
 list-scroll-horizontal
   rotate: false
   xy: 509, 873
@@ -230,7 +237,7 @@ list-scroll-horizontal
   index: -1
 list-scroll-vertical
   rotate: false
-  xy: 508, 579
+  xy: 508, 560
   size: 12, 30
   orig: 12, 30
   offset: 0, 0

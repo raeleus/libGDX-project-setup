@@ -41,6 +41,12 @@
 		"b": 0,
 		"a": 0.4
 	},
+	"stage-background": {
+		"r": 0,
+		"g": 0,
+		"b": 0,
+		"a": 0.47333333
+	},
 	"white": {
 		"r": 1,
 		"g": 1,
@@ -58,6 +64,10 @@
 	"window": {
 		"name": "white",
 		"color": "window"
+	},
+	"stage-background": {
+		"name": "white",
+		"color": "stage-background"
 	}
 },
 "com.ray3k.tenpatch.TenPatchDrawable": {
@@ -478,6 +488,25 @@
 		"frameDuration": 0.03,
 		"regions": [],
 		"playMode": 2
+	},
+	"list-library-10": {
+		"region": "list-library",
+		"horizontalStretchAreas": [ 3, 46 ],
+		"verticalStretchAreas": [ 2, 20 ],
+		"tiling": false,
+		"minWidth": 49,
+		"minHeight": 24,
+		"rightWidth": 5,
+		"leftWidth": 6,
+		"bottomHeight": 4,
+		"topHeight": 5,
+		"offsetX": 0,
+		"offsetY": 0,
+		"offsetXspeed": 0,
+		"offsetYspeed": 0,
+		"frameDuration": 0.03,
+		"regions": [],
+		"playMode": 2
 	}
 },
 "com.badlogic.gdx.scenes.scene2d.ui.Button$ButtonStyle": {
@@ -491,13 +520,21 @@
 		"down": "button-progress-pressed",
 		"over": "button-progress-over",
 		"checked": "button-progress-checked"
+	},
+	"add": {
+		"up": "icon-add",
+		"down": "icon-add-pressed",
+		"over": "icon-add-over"
 	}
 },
 "com.badlogic.gdx.scenes.scene2d.ui.CheckBox$CheckBoxStyle": {
 	"default": {
 		"checkboxOn": "checkbox-pressed",
 		"checkboxOff": "checkbox",
+		"checkboxOnOver": "checkbox-over",
 		"font": "font",
+		"fontColor": "white",
+		"overFontColor": "highlight",
 		"pressedOffsetY": -1
 	}
 },
@@ -512,6 +549,30 @@
 		"up": "button-big-10",
 		"down": "button-big-pressed-10",
 		"over": "button-big-over-10"
+	}
+},
+"com.badlogic.gdx.scenes.scene2d.ui.ImageTextButton$ImageTextButtonStyle": {
+	"default": {
+		"font": "font",
+		"up": "button-normal-10"
+	},
+	"delete": {
+		"imageUp": "icon-delete",
+		"imageDown": "icon-delete-over",
+		"imageOver": "icon-delete-over",
+		"font": "light",
+		"fontColor": "white",
+		"overFontColor": "highlight",
+		"pressedOffsetY": -1
+	},
+	"check": {
+		"imageUp": "icon-check",
+		"imageDown": "icon-check-over",
+		"imageOver": "icon-check-over",
+		"font": "light",
+		"fontColor": "white",
+		"overFontColor": "highlight",
+		"pressedOffsetY": -1
 	}
 },
 "com.badlogic.gdx.scenes.scene2d.ui.Label$LabelStyle": {
@@ -599,6 +660,12 @@
 		"up": "button-normal-10",
 		"down": "button-normal-pressed-10",
 		"over": "button-normal-over-10"
+	},
+	"list": {
+		"font": "light",
+		"fontColor": "white",
+		"overFontColor": "highlight",
+		"pressedOffsetY": -1
 	}
 },
 "com.badlogic.gdx.scenes.scene2d.ui.TextField$TextFieldStyle": {

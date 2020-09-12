@@ -30,7 +30,7 @@ dependencies {
 	implementation "com.badlogicgames.gdx:gdx:$gdxVersion:sources"
 	implementation "com.badlogicgames.gdx:gdx-backend-gwt:$gdxVersion"
 	implementation "com.badlogicgames.gdx:gdx-backend-gwt:$gdxVersion:sources"
-	api 'com.github.raeleus.TenPatch:tenpatch:5.0.0'
+	api 'com.github.raeleus.TenPatch:tenpatch:5.0.0:sources'
 }
 
 import org.akhikhl.gretty.AppBeforeIntegrationTestTask
