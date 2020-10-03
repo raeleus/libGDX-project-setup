@@ -507,6 +507,25 @@
 		"frameDuration": 0.03,
 		"regions": [],
 		"playMode": 2
+	},
+	"select-box-list-10": {
+		"region": "select-box-list",
+		"horizontalStretchAreas": [ 4, 45 ],
+		"verticalStretchAreas": [ 2, 20 ],
+		"tiling": false,
+		"minWidth": 49,
+		"minHeight": 24,
+		"rightWidth": 4,
+		"leftWidth": 5,
+		"bottomHeight": 3,
+		"topHeight": 4,
+		"offsetX": 0,
+		"offsetY": 0,
+		"offsetXspeed": 0,
+		"offsetYspeed": 0,
+		"frameDuration": 0.03,
+		"regions": [],
+		"playMode": 2
 	}
 },
 "com.badlogic.gdx.scenes.scene2d.ui.Button$ButtonStyle": {
@@ -613,7 +632,7 @@
 		"vScrollKnob": "list-scroll-vertical-10"
 	},
 	"select-box": {
-		"background": "list-10",
+		"background": "select-box-list-10",
 		"hScrollKnob": "list-scroll-horizontal-10",
 		"vScrollKnob": "list-scroll-vertical-10"
 	}

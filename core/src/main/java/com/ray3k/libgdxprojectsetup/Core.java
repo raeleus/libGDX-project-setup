@@ -14,6 +14,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.ray3k.libgdxprojectsetup.tables.LandingTable;
 import com.ray3k.libgdxprojectsetup.tables.LibrariesTable;
+import com.ray3k.libgdxprojectsetup.tables.OptionsTable;
 import com.ray3k.libgdxprojectsetup.widgets.LibBuilder.LibBuilderStyle;
 import com.ray3k.libgdxprojectsetup.widgets.WizardProgress.ProgressGroupStyle;
 import com.ray3k.libgdxprojectsetup.tables.ProjectTable;
@@ -25,6 +26,7 @@ public class Core extends ApplicationAdapter {
 	public static LandingTable landingTable;
 	public static ProjectTable projectTable;
 	public static LibrariesTable librariesTable;
+	public static OptionsTable optionsTable;
 	
 	@Override
 	public void create() {
@@ -58,7 +60,8 @@ public class Core extends ApplicationAdapter {
 		landingTable = new LandingTable();
 		projectTable = new ProjectTable();
 		librariesTable = new LibrariesTable();
-		root.add(librariesTable).minSize(600, 530);
+		optionsTable = new OptionsTable();
+		root.add(optionsTable).minSize(600, 530);
 	}
 
 	@Override

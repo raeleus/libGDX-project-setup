@@ -76,28 +76,28 @@ button-normal-pressed
   index: -1
 button-progress
   rotate: false
-  xy: 489, 504
+  xy: 262, 205
   size: 14, 13
   orig: 14, 13
   offset: 0, 0
   index: -1
 button-progress-checked
   rotate: false
-  xy: 372, 344
+  xy: 489, 504
   size: 14, 13
   orig: 14, 13
   offset: 0, 0
   index: -1
 button-progress-over
   rotate: false
-  xy: 262, 212
+  xy: 372, 344
   size: 14, 13
   orig: 14, 13
   offset: 0, 0
   index: -1
 button-progress-pressed
   rotate: false
-  xy: 508, 592
+  xy: 508, 573
   size: 14, 13
   orig: 14, 13
   offset: 0, 0
@@ -146,7 +146,7 @@ handle-advanced-options
   index: -1
 icon-add
   rotate: false
-  xy: 262, 265
+  xy: 262, 239
   size: 17, 18
   orig: 17, 18
   offset: 0, 0
@@ -174,14 +174,14 @@ icon-check
   index: -1
 icon-check-over
   rotate: false
-  xy: 262, 246
+  xy: 262, 220
   size: 16, 17
   orig: 16, 17
   offset: 0, 0
   index: -1
 icon-check-pressed
   rotate: false
-  xy: 281, 266
+  xy: 281, 240
   size: 16, 17
   orig: 16, 17
   offset: 0, 0
@@ -195,14 +195,14 @@ icon-delete
   index: -1
 icon-delete-over
   rotate: false
-  xy: 262, 227
+  xy: 508, 607
   size: 16, 17
   orig: 16, 17
   offset: 0, 0
   index: -1
 icon-delete-pressed
   rotate: false
-  xy: 508, 607
+  xy: 508, 588
   size: 16, 17
   orig: 16, 17
   offset: 0, 0
@@ -237,7 +237,7 @@ list-scroll-horizontal
   index: -1
 list-scroll-vertical
   rotate: false
-  xy: 508, 560
+  xy: 263, 173
   size: 12, 30
   orig: 12, 30
   offset: 0, 0
@@ -273,6 +273,13 @@ progress-back
 select-box
   rotate: false
   xy: 262, 311
+  size: 49, 24
+  orig: 49, 24
+  offset: 0, 0
+  index: -1
+select-box-list
+  rotate: false
+  xy: 262, 259
   size: 49, 24
   orig: 49, 24
   offset: 0, 0
