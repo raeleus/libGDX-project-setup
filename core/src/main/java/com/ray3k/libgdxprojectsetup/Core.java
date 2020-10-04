@@ -69,8 +69,7 @@ public class Core extends ApplicationAdapter {
 		librariesTable = new LibrariesTable();
 		optionsTable = new OptionsTable();
 
-		currentTable = landingTable;
-		root.add(currentTable).minSize(600, 530);
+		showTable(landingTable);
 	}
 
 	@Override
@@ -94,6 +93,17 @@ public class Core extends ApplicationAdapter {
 	@Override
 	public void dispose() {
 		skin.dispose();
+	}
+
+	public static void showTable(Table introTable) {
+		root.add(introTable).minSize(600, 530);
+		root.validate();
+		currentTable = introTable;
+		introTable.addAction(sequence(
+				moveTo(introTable.getX(), stage.getHeight()),
+				moveTo(introTable.getX(), introTable.getY(), TRANSITION_TIME, Interpolation.fade)
+		));
+		introTable.setPosition(introTable.getX(), stage.getHeight());
 	}
 
 	public static void previousTable(Table previousTable) {
