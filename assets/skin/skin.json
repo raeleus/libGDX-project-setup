@@ -68,6 +68,10 @@
 	"stage-background": {
 		"name": "white",
 		"color": "stage-background"
+	},
+	"highlight": {
+		"name": "white",
+		"color": "highlight"
 	}
 },
 "com.ray3k.tenpatch.TenPatchDrawable": {
@@ -693,6 +697,7 @@
 		"fontColor": "white",
 		"background": "textfield-10",
 		"cursor": "white",
+		"selection": "highlight",
 		"messageFontColor": "message"
 	}
 },
