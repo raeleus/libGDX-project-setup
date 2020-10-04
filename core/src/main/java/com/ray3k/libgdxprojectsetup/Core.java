@@ -29,8 +29,11 @@ public class Core extends ApplicationAdapter {
 	public static LibrariesTable librariesTable;
 	public static OptionsTable optionsTable;
 	public static ClassicProjectTable classicProjectTable;
+	public static LoadingTable loadingTable;
 	public static Table currentTable;
-	public static final float TRANSITION_TIME = .8f;
+	public static final float INTRO_TRANSITION_TIME = 1f;
+	public static final float TRANSITION_TIME = 1.2f;
+	public static final float OUTRO_TRANSITION_TIME = 1.6f;
 	
 	@Override
 	public void create() {
@@ -67,6 +70,7 @@ public class Core extends ApplicationAdapter {
 		librariesTable = new LibrariesTable();
 		optionsTable = new OptionsTable();
 		classicProjectTable = new ClassicProjectTable();
+		loadingTable = new LoadingTable();
 
 		showTable(landingTable);
 	}
@@ -100,7 +104,7 @@ public class Core extends ApplicationAdapter {
 		currentTable = introTable;
 		introTable.addAction(sequence(
 				moveTo(introTable.getX(), stage.getHeight()),
-				moveTo(introTable.getX(), introTable.getY(), TRANSITION_TIME, Interpolation.fade)
+				moveTo(introTable.getX(), introTable.getY(), INTRO_TRANSITION_TIME, Interpolation.fade)
 		));
 		introTable.setPosition(introTable.getX(), stage.getHeight());
 	}
@@ -124,7 +128,7 @@ public class Core extends ApplicationAdapter {
 
 	public static void nextTable(Table nextTable) {
 		currentTable.addAction(sequence(
-				moveTo(-currentTable.getWidth(), currentTable.getY(), TRANSITION_TIME / 2, Interpolation.exp5),
+				moveTo(-currentTable.getWidth(), currentTable.getY(), TRANSITION_TIME / 2, Interpolation.fade),
 				run(() -> {
 					root.clearChildren();
 					root.add(nextTable).minSize(600, 530);
@@ -132,9 +136,25 @@ public class Core extends ApplicationAdapter {
 					currentTable = nextTable;
 					nextTable.addAction(sequence(
 							moveTo(stage.getWidth(), nextTable.getY()),
-							moveTo(nextTable.getX(), nextTable.getY(), TRANSITION_TIME / 2, Interpolation.exp5)
+							moveTo(nextTable.getX(), nextTable.getY(), TRANSITION_TIME / 2, Interpolation.fade)
 					));
 					nextTable.setPosition(stage.getWidth(), nextTable.getY());
+				})
+		));
+	}
+
+	public static void finalTable(Table nextTable) {
+		currentTable.addAction(sequence(
+				moveTo(currentTable.getX(), -currentTable.getHeight(), OUTRO_TRANSITION_TIME / 2, Interpolation.fade),
+				run(() -> {
+					root.clearChildren();
+					root.add(nextTable).minSize(600, 530);
+					root.validate();
+					currentTable = nextTable;
+					nextTable.addAction(sequence(
+							alpha(1.0f, OUTRO_TRANSITION_TIME / 2, Interpolation.fade)
+					));
+					nextTable.setColor(1, 1, 1, 0);
 				})
 		));
 	}

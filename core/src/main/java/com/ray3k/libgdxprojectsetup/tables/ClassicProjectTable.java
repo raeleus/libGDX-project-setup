@@ -3,9 +3,6 @@ package com.ray3k.libgdxprojectsetup.tables;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
-import com.ray3k.libgdxprojectsetup.widgets.WizardProgress;
-import com.ray3k.libgdxprojectsetup.widgets.WizardProgress.WizardProgressEvent;
-import com.ray3k.libgdxprojectsetup.widgets.WizardProgress.WizardProgressListener;
 
 import static com.ray3k.libgdxprojectsetup.Core.*;
 
@@ -87,5 +84,11 @@ public class ClassicProjectTable extends Table  {
         
         textButton = new TextButton("GENERATE", skin, "small");
         table.add(textButton).uniform();
+        textButton.addListener(new ChangeListener() {
+            @Override
+            public void changed(ChangeEvent event, Actor actor) {
+                finalTable(loadingTable);
+            }
+        });
     }
 }
