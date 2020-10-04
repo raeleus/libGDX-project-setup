@@ -1,9 +1,12 @@
 package com.ray3k.libgdxprojectsetup.tables;
 
+import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
+import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
+import com.ray3k.libgdxprojectsetup.Core;
 
 import static com.badlogic.gdx.utils.Align.bottomRight;
-import static com.ray3k.libgdxprojectsetup.Core.skin;
+import static com.ray3k.libgdxprojectsetup.Core.*;
 
 public class LandingTable extends Table  {
     public LandingTable() {
@@ -51,6 +54,12 @@ public class LandingTable extends Table  {
     
         ImageButton imageButton = new ImageButton(skin, "wizard");
         table.add(imageButton);
+        imageButton.addListener(new ChangeListener() {
+            @Override
+            public void changed(ChangeEvent event, Actor actor) {
+                nextTable(projectTable);
+            }
+        });
         
         row();
         defaults().clearActor();

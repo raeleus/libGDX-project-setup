@@ -1,11 +1,13 @@
 package com.ray3k.libgdxprojectsetup.tables;
 
+import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
+import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.ray3k.libgdxprojectsetup.widgets.WizardProgress;
 import com.ray3k.libgdxprojectsetup.widgets.WizardProgress.WizardProgressEvent;
 import com.ray3k.libgdxprojectsetup.widgets.WizardProgress.WizardProgressListener;
 
-import static com.ray3k.libgdxprojectsetup.Core.skin;
+import static com.ray3k.libgdxprojectsetup.Core.*;
 
 public class OptionsTable extends Table  {
     public OptionsTable() {
@@ -135,7 +137,14 @@ public class OptionsTable extends Table  {
         table = new Table();
         add(table).growX();
 
-        table.add().uniform();
+        textButton = new TextButton("PREVIOUS", skin, "small");
+        table.add(textButton).uniform();
+        textButton.addListener(new ChangeListener() {
+            @Override
+            public void changed(ChangeEvent event, Actor actor) {
+                previousTable(librariesTable);
+            }
+        });
 
         WizardProgress progressStack = new WizardProgress(2, 3, "Options", skin);
         table.add(progressStack).expandX();
@@ -146,7 +155,7 @@ public class OptionsTable extends Table  {
             }
         });
 
-        textButton = new TextButton("NEXT", skin, "small");
+        textButton = new TextButton("GENERATE", skin, "small");
         table.add(textButton).uniform();
     }
 }

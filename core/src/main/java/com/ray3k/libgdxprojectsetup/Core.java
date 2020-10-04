@@ -4,6 +4,7 @@ import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Button.ButtonStyle;
 import com.badlogic.gdx.scenes.scene2d.ui.CheckBox.CheckBoxStyle;
@@ -15,11 +16,14 @@ import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.ray3k.libgdxprojectsetup.tables.LandingTable;
 import com.ray3k.libgdxprojectsetup.tables.LibrariesTable;
 import com.ray3k.libgdxprojectsetup.tables.OptionsTable;
+import com.ray3k.libgdxprojectsetup.tables.ProjectTable;
 import com.ray3k.libgdxprojectsetup.widgets.LibBuilder.LibBuilderStyle;
 import com.ray3k.libgdxprojectsetup.widgets.WizardProgress.ProgressGroupStyle;
-import com.ray3k.libgdxprojectsetup.tables.ProjectTable;
+
+import static com.badlogic.gdx.scenes.scene2d.actions.Actions.*;
 
 public class Core extends ApplicationAdapter {
+	public static Core core;
 	public static Stage stage;
 	public static Skin skin;
 	public static Table root;
@@ -27,9 +31,12 @@ public class Core extends ApplicationAdapter {
 	public static ProjectTable projectTable;
 	public static LibrariesTable librariesTable;
 	public static OptionsTable optionsTable;
+	public static Table currentTable;
+	public static final float TRANSITION_TIME = .8f;
 	
 	@Override
 	public void create() {
+		core = this;
 		
 		stage = new Stage(new ScreenViewport());
 		Gdx.input.setInputProcessor(stage);
@@ -61,7 +68,9 @@ public class Core extends ApplicationAdapter {
 		projectTable = new ProjectTable();
 		librariesTable = new LibrariesTable();
 		optionsTable = new OptionsTable();
-		root.add(optionsTable).minSize(600, 530);
+
+		currentTable = landingTable;
+		root.add(currentTable).minSize(600, 530);
 	}
 
 	@Override
@@ -85,5 +94,39 @@ public class Core extends ApplicationAdapter {
 	@Override
 	public void dispose() {
 		skin.dispose();
+	}
+
+	public static void previousTable(Table previousTable) {
+		currentTable.addAction(sequence(
+				moveTo(stage.getWidth(), currentTable.getY(), TRANSITION_TIME / 2, Interpolation.exp5),
+				run(() -> {
+					root.clearChildren();
+					root.add(previousTable).minSize(600, 530);
+					root.validate();
+					currentTable = previousTable;
+					previousTable.addAction(sequence(
+							moveTo(-previousTable.getWidth(), previousTable.getY()),
+							moveTo(previousTable.getX(), previousTable.getY(), TRANSITION_TIME / 2, Interpolation.exp5)
+					));
+					previousTable.setPosition(stage.getWidth(), previousTable.getY());
+				})
+		));
+	}
+
+	public static void nextTable(Table nextTable) {
+		currentTable.addAction(sequence(
+				moveTo(-currentTable.getWidth(), currentTable.getY(), TRANSITION_TIME / 2, Interpolation.exp5),
+				run(() -> {
+					root.clearChildren();
+					root.add(nextTable).minSize(600, 530);
+					root.validate();
+					currentTable = nextTable;
+					nextTable.addAction(sequence(
+							moveTo(stage.getWidth(), nextTable.getY()),
+							moveTo(nextTable.getX(), nextTable.getY(), TRANSITION_TIME / 2, Interpolation.exp5)
+					));
+					nextTable.setPosition(stage.getWidth(), nextTable.getY());
+				})
+		));
 	}
 }

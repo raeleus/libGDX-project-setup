@@ -1,7 +1,9 @@
 package com.ray3k.libgdxprojectsetup.tables;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
+import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.utils.Json;
 import com.badlogic.gdx.utils.JsonReader;
 import com.badlogic.gdx.utils.JsonValue;
@@ -12,7 +14,7 @@ import com.ray3k.libgdxprojectsetup.widgets.WizardProgress.WizardProgressListene
 
 import java.util.Iterator;
 
-import static com.ray3k.libgdxprojectsetup.Core.skin;
+import static com.ray3k.libgdxprojectsetup.Core.*;
 
 public class LibrariesTable extends Table  {
     public LibrariesTable() {
@@ -59,6 +61,12 @@ public class LibrariesTable extends Table  {
     
         TextButton textButton = new TextButton("PREVIOUS", skin, "small");
         table.add(textButton).uniform();
+        textButton.addListener(new ChangeListener() {
+            @Override
+            public void changed(ChangeEvent event, Actor actor) {
+                previousTable(projectTable);
+            }
+        });
         
         WizardProgress progressStack = new WizardProgress(1, 3, "LIBRARIES", skin);
         table.add(progressStack).expandX();
@@ -71,5 +79,11 @@ public class LibrariesTable extends Table  {
         
         textButton = new TextButton("NEXT", skin, "small");
         table.add(textButton).uniform();
+        textButton.addListener(new ChangeListener() {
+            @Override
+            public void changed(ChangeEvent event, Actor actor) {
+                nextTable(optionsTable);
+            }
+        });
     }
 }
