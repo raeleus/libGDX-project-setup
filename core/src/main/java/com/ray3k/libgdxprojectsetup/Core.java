@@ -13,10 +13,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Label.LabelStyle;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
-import com.ray3k.libgdxprojectsetup.tables.LandingTable;
-import com.ray3k.libgdxprojectsetup.tables.LibrariesTable;
-import com.ray3k.libgdxprojectsetup.tables.OptionsTable;
-import com.ray3k.libgdxprojectsetup.tables.ProjectTable;
+import com.ray3k.libgdxprojectsetup.tables.*;
 import com.ray3k.libgdxprojectsetup.widgets.LibBuilder.LibBuilderStyle;
 import com.ray3k.libgdxprojectsetup.widgets.WizardProgress.ProgressGroupStyle;
 
@@ -31,6 +28,7 @@ public class Core extends ApplicationAdapter {
 	public static ProjectTable projectTable;
 	public static LibrariesTable librariesTable;
 	public static OptionsTable optionsTable;
+	public static ClassicProjectTable classicProjectTable;
 	public static Table currentTable;
 	public static final float TRANSITION_TIME = .8f;
 	
@@ -68,6 +66,7 @@ public class Core extends ApplicationAdapter {
 		projectTable = new ProjectTable();
 		librariesTable = new LibrariesTable();
 		optionsTable = new OptionsTable();
+		classicProjectTable = new ClassicProjectTable();
 
 		showTable(landingTable);
 	}

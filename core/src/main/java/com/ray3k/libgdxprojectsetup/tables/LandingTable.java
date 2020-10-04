@@ -51,15 +51,21 @@ public class LandingTable extends Table  {
         
         TextButton textButton = new TextButton("CREATE NEW PROJECT", skin, "big");
         table.add(textButton);
-    
-        ImageButton imageButton = new ImageButton(skin, "wizard");
-        table.add(imageButton);
-        imageButton.addListener(new ChangeListener() {
+        textButton.addListener(new ChangeListener() {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
-                nextTable(projectTable);
+                nextTable(classicProjectTable);
             }
         });
+    
+//        ImageButton imageButton = new ImageButton(skin, "wizard");
+//        table.add(imageButton);
+//        imageButton.addListener(new ChangeListener() {
+//            @Override
+//            public void changed(ChangeEvent event, Actor actor) {
+//                nextTable(projectTable);
+//            }
+//        });
         
         row();
         defaults().clearActor();
