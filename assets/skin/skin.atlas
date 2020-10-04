@@ -83,44 +83,44 @@ button-progress
   index: -1
 button-progress-checked
   rotate: false
-  xy: 489, 504
+  xy: 490, 504
   size: 14, 13
   orig: 14, 13
   offset: 0, 0
   index: -1
 button-progress-over
   rotate: false
-  xy: 372, 344
+  xy: 508, 573
   size: 14, 13
   orig: 14, 13
   offset: 0, 0
   index: -1
 button-progress-pressed
   rotate: false
-  xy: 508, 573
+  xy: 508, 558
   size: 14, 13
   orig: 14, 13
   offset: 0, 0
   index: -1
 checkbox
   rotate: false
-  xy: 467, 502
-  size: 20, 15
-  orig: 20, 15
+  xy: 467, 501
+  size: 21, 16
+  orig: 21, 16
   offset: 0, 0
   index: -1
 checkbox-over
   rotate: false
-  xy: 262, 398
-  size: 20, 15
-  orig: 20, 15
+  xy: 262, 397
+  size: 21, 16
+  orig: 21, 16
   offset: 0, 0
   index: -1
 checkbox-pressed
   rotate: false
-  xy: 372, 379
-  size: 20, 15
-  orig: 20, 15
+  xy: 372, 378
+  size: 21, 16
+  orig: 21, 16
   offset: 0, 0
   index: -1
 divider-horizontal
@@ -132,7 +132,7 @@ divider-horizontal
   index: -1
 divider-vertical
   rotate: false
-  xy: 394, 383
+  xy: 1017, 1012
   size: 1, 11
   orig: 1, 11
   offset: 0, 0
@@ -160,14 +160,14 @@ icon-add-over
   index: -1
 icon-add-pressed
   rotate: false
-  xy: 372, 359
+  xy: 372, 358
   size: 17, 18
   orig: 17, 18
   offset: 0, 0
   index: -1
 icon-check
   rotate: false
-  xy: 284, 396
+  xy: 285, 396
   size: 16, 17
   orig: 16, 17
   offset: 0, 0
